@@ -1,6 +1,6 @@
 # PWA e Push notification
 
-Projeto de reformulação do TarefaNet.
+Um projeto simples em ANGULAR 6 e NODE utilizando PWA e PushNotification.
 
 ### Linguagens utilizadas:
   - Angular 6
