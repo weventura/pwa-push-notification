@@ -1,0 +1,1 @@
+Adicione aqui as informações de escopo do projeto e requisitos.

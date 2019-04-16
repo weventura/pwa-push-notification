@@ -1,0 +1,39 @@
+
+<div class="container">
+  <div class="row">
+    <div class="offset-sm-3 offset-md-3 offset-lg-3 col-sm-6 col-md-6 col-lg-6">
+      <h2 class="text-center">Version 6.0</h2>
+      <h4 class="text-center">[ Progressive Web App ]</h4>
+    </div>
+  </div>
+  <div class="row">
+    <div class="offset-sm-3 offset-md-3 offset-lg-3 col-sm-6 col-md-6 col-lg-6">
+      <div class="card">
+        <div class="card-body">
+          <div class="content">
+              <div class="loader" *ngIf="isLoader">
+                <i class="fa fa-spinner fa-spin"></i>
+              </div>
+              <div *ngIf="!isLoader" >
+                <div class="content__image"> 
+                    <img class="text-center" [src]="pathIcon" alt="">
+                </div>
+                <h5 class="card-title text-center">{{ response?.value }}</h5>
+              </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="offset-sm-3 offset-md-3 offset-lg-3 col-sm-6 col-md-6 col-lg-6">
+      <button class="btn btn-info" (click)="subscribeToNotification()">
+        <span *ngIf="!isLoaderButton">Subscribe to notification</span>
+        <div class="loader" *ngIf="isLoaderButton">
+          <i class="fa fa-spinner fa-spin"></i>
+        </div>
+      </button>
+    </div>
+  </div>
+</div>
+
