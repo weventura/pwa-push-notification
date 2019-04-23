@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { AppService } from './app.service';
 import { SwUpdate, SwPush } from '@angular/service-worker';
 
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -23,6 +24,20 @@ export class AppComponent implements OnInit {
   ) { }
 
   ngOnInit() {
+
+    if ( 'caches'  in window )  { 
+      // Tem suporte! 
+      console.log('has support')
+
+      caches.open('data').then((cache) => {
+        cache.add('https://api.chucknorris.io/jokes/random');
+        // cache.add(new Request ('https://api.chucknorris.io/jokes/random'));
+
+        cache.keys().then((cachedRequests) => { 
+          console.log(cachedRequests); // [Request, Request]
+        });
+      })
+    }
     
     this.reloadCache();
 
@@ -55,7 +70,7 @@ export class AppComponent implements OnInit {
           this._appService.sendNotification(subscription).subscribe();
           this.isLoaderButton = false;
         })
-        .catch(console.error);
+        .catch(() => { console.error; console.log('catch') });
     }
   }
 

@@ -34,6 +34,7 @@ app.post('/sendNotification', (req, res) => {
 
   fakeDatabase.forEach(subscription => { 
     promises.push(webpush.sendNotification(subscription, JSON.stringify(notificationPayload)));
+    console.log('sent notification!')
   });
 
   Promise.resolve(promises).then(() => {

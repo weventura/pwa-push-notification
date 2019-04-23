@@ -21,7 +21,10 @@
           "/assets/**",
           "/*.(eot|svg|cur|jpg|png|webp|gif|otf|ttf|woff|woff2|ani)"
         ],
-        "urls": ["https://assets.chucknorris.host/img/avatar/**"]
+        "urls": [
+          "https://assets.chucknorris.host/img/avatar/**",
+          "https://fcm.googleapis.com/fcm/send/**"
+        ]
       }
     }
   ],
