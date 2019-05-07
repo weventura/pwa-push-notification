@@ -1,0 +1,65 @@
+<div class="row">
+  <div class="col-12">
+    <div class="filter">
+      <input [(ngModel)]="textFilter" (ngModelChange)="filter($event)" type="text" placeholder="Search">
+      <i class="fas fa-search" *ngIf="textFilter == '' " ></i>
+      <i class="fas fa-times" (click)="cleanInput()" *ngIf="textFilter != '' "></i>
+    </div>
+
+    <div class="message">
+      <h5 class="message__text in-down" *ngIf="this.resultFilter.length <= 0 && textFilter != '' " >
+        Nenhum item encontrado.
+      </h5>
+    </div>
+
+  </div>
+</div>
+
+<div class="row">
+  <div class="in-left offset-sm-3 offset-md-3 offset-lg-3 col-sm-6 col-md-6 col-lg-6" *ngIf="textFilter == '' " >
+    <!-- Building cards default -->
+    <div class="card" *ngFor="let user of users" >
+      <div class="card-body">
+        <h5 class="card-title text-left">ID: {{ user?.id }}</h5>
+        <h5 class="card-title text-left">User name: {{ user?.username }}</h5>
+        <h5 class="card-title text-left">Name: {{ user?.name }}</h5>
+        <h5 class="card-title text-left">Phone: {{ user?.phone }}</h5>
+        <h5 class="card-title text-left">E-mail: {{ user?.email }}</h5>
+        <hr>
+        <h5 class="card-title text-left">City: {{ user?.address.city }}</h5>
+        <h5 class="card-title text-left">Suite: {{ user?.address.suite }}</h5>
+        <h5 class="card-title text-left">Zip-code: {{ user?.address.zipcode }}</h5>
+      </div>
+    </div>
+  </div>
+
+  <div class="in-left offset-sm-3 offset-md-3 offset-lg-3 col-sm-6 col-md-6 col-lg-6 " *ngIf="this.resultFilter.length > 0 && textFilter != '' ">
+    <!-- Building cards to filter -->
+    <div class="card" *ngFor="let user of this.resultFilter" >
+      <div class="card-body">
+        <h5 class="card-title text-left">ID: {{ user?.id }}</h5>
+        <h5 class="card-title text-left">User name: {{ user?.username }}</h5>
+        <h5 class="card-title text-left">Name: {{ user?.name }}</h5>
+        <h5 class="card-title text-left">Phone: {{ user?.phone }}</h5>
+        <h5 class="card-title text-left">E-mail: {{ user?.email }}</h5>
+        <hr>
+        <h5 class="card-title text-left">City: {{ user?.address.city }}</h5>
+        <h5 class="card-title text-left">Suite: {{ user?.address.suite }}</h5>
+        <h5 class="card-title text-left">Zip-code: {{ user?.address.zipcode }}</h5>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- 
+<div class="content">
+  <div class="loader" *ngIf="isLoader">
+    <i class="fa fa-spinner fa-spin"></i>
+  </div>
+  <div *ngIf="!isLoader" >
+    <div class="content__image"> 
+        <img class="text-center" [src]="pathIcon" alt="">
+    </div>
+    <h5 class="card-title text-center">{{ response?.value }}</h5>
+  </div>
+</div> -->

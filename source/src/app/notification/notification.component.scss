@@ -1,0 +1,34 @@
+
+// Variables 
+$bg-light: rgba(0, 0, 0, 0.3);
+$white: #ffff;
+
+.text-center {color: $white; }
+    .btn-info {
+        width: 100%;
+    }
+
+.card {
+    height: 18rem;
+    margin: 25px 0px;
+    background-color: $bg-light;
+    color: $white;
+
+    .content {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translateY(-50%) translateX(-50%);
+        width: 100%;
+        padding: 0 20px;
+        .content__image img { 
+            margin: 0 auto;
+            margin-bottom: 10px;
+            display: block;
+        }
+        .loader {
+            font-size: 2.5rem;
+            text-align: center;
+        }
+    }    
+}

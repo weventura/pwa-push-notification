@@ -35,7 +35,9 @@
         "https://fcm.googleapis.com/fcm/send/**",
         "https://api.chucknorris.io/jokes/random",
         "http://localhost:3000/sendNotification",
-        "http://localhost:3000/subscription"
+        "http://localhost:3000/subscription",
+        "https://jsonplaceholder.typicode.com/users",
+        "https://jsonplaceholder.typicode.com/posts"
       ],
       "cacheConfig": {
         "strategy": "freshness",
