@@ -11,7 +11,8 @@ import { ProfilesRoutingModule } from './profiles.routing.module';
   imports: [
     CommonModule,
     FormsModule ,
-    ProfilesRoutingModule
-  ]
+    ProfilesRoutingModule // Module os routes
+  ], 
+  exports: [ ProfilesComponent ]
 })
 export class ProfilesModule { }

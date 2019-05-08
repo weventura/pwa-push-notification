@@ -8,7 +8,7 @@ import { NotificationRoutingModule } from './notification.routing.module';
   declarations: [ NotificationComponent ],
   imports: [
     CommonModule,
-    NotificationRoutingModule
+    NotificationRoutingModule // Module os routes
   ], 
   exports: [ NotificationComponent ]
 })
